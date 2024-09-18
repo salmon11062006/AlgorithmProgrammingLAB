@@ -1,8 +1,7 @@
 import random
 randomNumber = random.randint(1,101)
-correctGuess = 0    
 guesses = int(input('Guess the secret number: '))
-while correctGuess == 0:
+while True:
 
     if guesses < randomNumber:
         print('The number is higher')
