@@ -1,15 +1,27 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 10, 100)
-y1 = np.sin(x)
-y2 = np.cos(x)
-y3 = np.tan(x)
+import matplotlib.pyplot as plt
+import numpy as np
 
-plt.style.use('whitegrid')
+size = int(input("Enter the size of the array: "))
 
-plt.plot(x, y1, label='Sine', color='red', linestyle='-', linewidth=2)
-plt.plot(x, y2, label='Cosine', color='blue', linestyle='--', linewidth=2)
-plt.plot(x, y3, label='Tangent', color='green', linestyle='-.', linewidth=2)
+graph_type = input("Enter the type of graph (plot, scatter, bar): ").strip().lower()
 
+x = np.arange(1, size + 1)
+
+y = x ** 2
+
+if graph_type == 'plot':
+    plt.plot(x, y)
+elif graph_type == 'scatter':
+    plt.scatter(x, y)
+elif graph_type == 'bar':
+    plt.bar(x, y)
+else:
+    print("Invalid graph type. Please enter 'plot', 'scatter', or 'bar'.")
+
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Assignment Week 10')
 plt.show()
